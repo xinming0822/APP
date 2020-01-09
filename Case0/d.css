@@ -1,0 +1,115 @@
+
+div.container {
+    width: 360px;
+    height: 210px;
+    margin: 0px auto;
+}
+
+div.grid {
+width: 70px;
+height: 70px;
+margin: 5px;
+line-height: 200px;
+box-shadow: 5px 5px 5px thistle;
+font-size: 15px;
+display: inline-block;
+}
+
+div.grid1{
+    top:80px;
+    animation-delay:-5s;
+}
+div.grid2{
+    top:240px;
+    animation-delay:-3s;
+}
+div.grid3{
+    top:450px;
+    animation-delay:3s;
+}
+div.grid4{
+    top:610px;
+    animation-delay:-3s;
+}
+
+
+div {
+    width:50px;
+    height:50px; 
+    position:absolute;
+    animation-name: oxxo;
+    animation-duration:5s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+  }
+
+
+
+
+@keyframes oxxo {
+from {
+    margin-left: 0px;
+}
+to {
+    margin-left: 600px;
+}
+}
+
+.box:before{
+    content:'';
+    position:absolute;
+    z-index:2;
+    top:360px;
+    left:80px;
+    width:50px;
+    height:50px;
+    background:seagreen;
+    border-radius:2px;
+    transform: rotate(45deg);
+    -webkit-animation:box .8s infinite ; 
+}
+@-webkit-keyframes box{
+    0%{
+        top:350px;
+    }
+    20%{
+        border-radius:2px;  /*從 20% 的地方才開始變形*/
+    }
+    50%{
+        top:380px; 
+        border-bottom-right-radius:25px;
+    }
+    80%{
+        border-radius:2px;  /*到 80% 的地方恢復原狀*/
+    }
+    100%{
+        top:350px;
+        transform: rotate(0deg);
+    }
+}
+.box:after{
+    content:'';
+    position:absolute;
+    z-index:1;
+    top:428px;
+    left:82px;
+    width:44px;
+    height:3px;
+    background:#eaeaea;
+    border-radius:100%;
+    -webkit-animation:shadow .8s infinite ; 
+}
+@-webkit-keyframes shadow{
+    0%,100%{
+        left:84px;
+        width:40px;
+        background:#b9b7b7;
+    }
+    50%{
+        top:426px;
+        left:80px;   /*讓陰影保持在原位*/
+        width:50px;
+        height:7px;
+        background:rgb(196, 194, 194);
+    }
+}

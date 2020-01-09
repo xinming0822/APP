@@ -1,0 +1,80 @@
+:root{
+	--back_color:lightgoldenrodyellow;
+	--applebeat:0s;
+}
+
+body {
+	background-color: var(--back_color);
+	margin: 0;
+	text-align: center;
+}
+
+/* Style the header */
+header {
+    background-color: rgb(241, 150, 150);
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+section {
+	padding: 5px;
+}
+
+/* Style the footer */
+footer {
+    background-color: rgb(241, 150, 150);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+div.grid1 {
+	background-color: rgb(210, 206, 248);
+	animation-name: ani_grid1;
+    animation-duration: 4s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+div.grid2 {
+	background-color: rgb(253, 182, 182);
+	animation-name: ani_grid2;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+div.grid3 {
+	background-color: rgb(233, 212, 143);
+}
+
+div.grid4 {
+	background-color: rgb(167, 214, 171);
+}
+
+/* CSS transform standard syntax */
+@keyframes ani_grid1 {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+	
+}
+
+@keyframes ani_grid2 {
+	0% {background-color: burlywood;}
+	20% {background-color: darkkhaki;}
+	40% {background-color: chocolate;}
+	60% {background-color: peru;}
+	80% {background-color:orange;}
+	100% {background-color: rgb(247, 140, 90);}
+}
+
+.fas {
+	animation-name: applebeat;
+    animation-duration: var(--applebeat);
+	animation-iteration-count: infinite;
+}
+
+@keyframes applebeat {
+	from {transform: scale(1,1); color: white;}
+	to {transform: scale(1.2,1.2); color: rgb(146, 233, 233);}
+}
