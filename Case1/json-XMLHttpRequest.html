@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<h1>Get JSON Open Data</h1>
+	<h3>Using XMLHttpRequest()</h3>
+	<div id="data_grid"></div>
+	
+	<script>
+	var xmlhttp = new XMLHttpRequest();
+	var url = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=4";
+
+	xmlhttp.onreadystatechange=function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			myFunction(xmlhttp.responseText);
+		}
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+
+	function myFunction(response) {
+		var arr = JSON.parse(response);
+		var i;
+		var out = "<table><tr><th>活動名稱</th><th>來源網站名稱</th><th>演出單位</th><th>點閱數</th></tr>";
+
+		for(i = 0; i < arr.length; i++) {
+			out += "<tr><td>" +
+			arr[i].title + "</td><td>" +
+			arr[i].sourceWebName + "</td><td>" +
+			arr[i].showUnit + "</td><td>" +
+			arr[i].hitRate + "</td></tr>";
+		}
+		out += "</table>";
+		document.getElementById("data_grid").innerHTML = out;
+	}
+	</script>
+</body>
+</html>
